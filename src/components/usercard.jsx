@@ -1,23 +1,16 @@
-// src/components/UserCard.jsx
 import React from "react";
+import "./Usercard.css"; // Keep the styles
 
-const UserCard = ({ name, description }) => {
+const Usercard = ({ name, email, phone, address, profilePhoto }) => {
   return (
-    <div style={styles.card}>
-      <h2>{name}</h2>
-      <p>{description}</p>
+    <div className="user-card">
+      <img src={profilePhoto} alt="User Profile" className="user-photo" />
+      <h3>{name}</h3>
+      <p><strong>Email:</strong> {email}</p>
+      <p><strong>Phone:</strong> {phone}</p>
+      <p><strong>Address:</strong> {address}</p>
     </div>
   );
 };
 
-const styles = {
-  card: {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    padding: "16px",
-    textAlign: "center",
-    backgroundColor: "#f9f9f9",
-  },
-};
-
-export default UserCard;
+export default Usercard;
